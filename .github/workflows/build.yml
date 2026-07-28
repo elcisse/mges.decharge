@@ -10,7 +10,7 @@ env:
   APP_NAME: DechargeMGES
   APP_VERSION: 1.0.0
   MAIN_CLASS: com.mges.decharge.Launcher
-  ADD_MODULES: java.desktop,java.logging,java.sql,java.naming,java.xml,java.prefs,jdk.unsupported
+  ADD_MODULES: java.desktop,java.logging,java.sql,java.naming,java.xml,java.prefs,java.scripting,jdk.unsupported
 
 jobs:
   build-windows:

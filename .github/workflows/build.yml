@@ -82,3 +82,21 @@ jobs:
         with:
           name: ${{ env.APP_NAME }}-macos-intel
           path: dist/*.dmg
+
+  release:
+    needs: [ build-windows, build-macos-intel ]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Publish GitHub Release with executables
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/${{ env.APP_NAME }}-windows/*.exe
+            artifacts/${{ env.APP_NAME }}-macos-intel/*.dmg

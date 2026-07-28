@@ -1,0 +1,31 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+}
+
+.titre-section {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1b3a5c;
+}
+
+.montant-lettres {
+    -fx-font-style: italic;
+    -fx-text-fill: #2e7d32;
+}
+
+.bouton-principal {
+    -fx-background-color: #1b3a5c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18 8 18;
+}
+
+.bouton-danger {
+    -fx-background-color: #b71c1c;
+    -fx-text-fill: white;
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 6 0 0 10;
+}

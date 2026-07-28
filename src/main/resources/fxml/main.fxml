@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.mges.decharge.controller.MainController"
+         tabClosingPolicy="UNAVAILABLE">
+    <tabs>
+        <Tab text="Nouvelle décharge">
+            <fx:include fx:id="form" source="form.fxml"/>
+        </Tab>
+        <Tab text="Historique">
+            <fx:include fx:id="list" source="list.fxml"/>
+        </Tab>
+    </tabs>
+</TabPane>

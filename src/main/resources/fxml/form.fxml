@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mges.decharge.controller.FormController"
+      spacing="16">
+    <padding>
+        <Insets top="24" right="40" bottom="24" left="40"/>
+    </padding>
+
+    <HBox spacing="14" alignment="CENTER_LEFT">
+        <ImageView fitHeight="50" preserveRatio="true">
+            <Image url="@../images/logo.png"/>
+        </ImageView>
+        <Label text="Nouvelle décharge" styleClass="titre-section"/>
+    </HBox>
+
+    <GridPane hgap="16" vgap="14">
+        <columnConstraints>
+            <ColumnConstraints minWidth="180"/>
+            <ColumnConstraints minWidth="300" hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Bénéficiaire *" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="beneficiaireField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="N° C.N.I." GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="cniNumeroField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Date de délivrance C.N.I." GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="cniDateField" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <Label text="Montant (F CFA) *" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="montantField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="ex: 10000"/>
+
+        <Label text="Montant en lettres" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <Label fx:id="montantLettresLabel" GridPane.rowIndex="4" GridPane.columnIndex="1" wrapText="true" styleClass="montant-lettres"/>
+
+        <Label text="Motif" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextArea fx:id="motifField" GridPane.rowIndex="5" GridPane.columnIndex="1" prefRowCount="2" wrapText="true"/>
+
+        <Label text="Lieu" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="lieuField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Label text="Date de la décharge *" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dateDechargeField" GridPane.rowIndex="7" GridPane.columnIndex="1" maxWidth="Infinity"/>
+    </GridPane>
+
+    <HBox spacing="12">
+        <Button text="Enregistrer et générer le PDF" onAction="#handleSave" styleClass="bouton-principal"/>
+        <Button text="Réinitialiser" onAction="#handleClear"/>
+    </HBox>
+</VBox>

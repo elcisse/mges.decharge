@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mges.decharge.controller.ListController"
+      spacing="16">
+    <padding>
+        <Insets top="24" right="40" bottom="24" left="40"/>
+    </padding>
+
+    <Label text="Historique des décharges" styleClass="titre-section"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Rechercher par nom, numéro ou motif..." HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+        <Button text="Rechercher" onAction="#handleSearch"/>
+    </HBox>
+
+    <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="numeroColumn" text="N°" prefWidth="140"/>
+            <TableColumn fx:id="beneficiaireColumn" text="Bénéficiaire" prefWidth="220"/>
+            <TableColumn fx:id="montantColumn" text="Montant (F CFA)" prefWidth="130"/>
+            <TableColumn fx:id="motifColumn" text="Motif" prefWidth="220"/>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="12">
+        <Button text="Réimprimer PDF" onAction="#handleReimprimer"/>
+        <Button text="Supprimer" onAction="#handleDelete" styleClass="bouton-danger"/>
+        <Button text="Actualiser" onAction="#refresh"/>
+    </HBox>
+</VBox>
